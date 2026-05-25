@@ -1,0 +1,55 @@
+WhisperWrapper(
+  (model): WhisperForConditionalGeneration(
+    (model): WhisperModel(
+      (encoder): WhisperEncoder(
+        (conv1): Conv1d(80, 1280, kernel_size=(3,), stride=(1,), padding=(1,))
+        (conv2): Conv1d(1280, 1280, kernel_size=(3,), stride=(2,), padding=(1,))
+        (embed_positions): Embedding(1500, 1280)
+        (layers): ModuleList(
+          (0-31): 32 x WhisperEncoderLayer(
+            (self_attn): WhisperSdpaAttention(
+              (k_proj): Linear(in_features=1280, out_features=1280, bias=False)
+              (v_proj): Linear(in_features=1280, out_features=1280, bias=True)
+              (q_proj): Linear(in_features=1280, out_features=1280, bias=True)
+              (out_proj): Linear(in_features=1280, out_features=1280, bias=True)
+            )
+            (self_attn_layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+            (activation_fn): GELUActivation()
+            (fc1): Linear(in_features=1280, out_features=5120, bias=True)
+            (fc2): Linear(in_features=5120, out_features=1280, bias=True)
+            (final_layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+      )
+      (decoder): WhisperDecoder(
+        (embed_tokens): Embedding(51865, 1280, padding_idx=50257)
+        (embed_positions): WhisperPositionalEmbedding(448, 1280)
+        (layers): ModuleList(
+          (0-31): 32 x WhisperDecoderLayer(
+            (self_attn): WhisperSdpaAttention(
+              (k_proj): Linear(in_features=1280, out_features=1280, bias=False)
+              (v_proj): Linear(in_features=1280, out_features=1280, bias=True)
+              (q_proj): Linear(in_features=1280, out_features=1280, bias=True)
+              (out_proj): Linear(in_features=1280, out_features=1280, bias=True)
+            )
+            (activation_fn): GELUActivation()
+            (self_attn_layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+            (encoder_attn): WhisperSdpaAttention(
+              (k_proj): Linear(in_features=1280, out_features=1280, bias=False)
+              (v_proj): Linear(in_features=1280, out_features=1280, bias=True)
+              (q_proj): Linear(in_features=1280, out_features=1280, bias=True)
+              (out_proj): Linear(in_features=1280, out_features=1280, bias=True)
+            )
+            (encoder_attn_layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+            (fc1): Linear(in_features=1280, out_features=5120, bias=True)
+            (fc2): Linear(in_features=5120, out_features=1280, bias=True)
+            (final_layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (proj_out): Linear(in_features=1280, out_features=51865, bias=False)
+  )
+)

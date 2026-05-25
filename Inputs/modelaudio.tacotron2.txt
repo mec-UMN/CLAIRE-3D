@@ -1,0 +1,49 @@
+Tacotron2(
+  (embedding): Embedding(148, 512)
+  (encoder): _Encoder(
+    (convolutions): ModuleList(
+      (0-2): 3 x Sequential(
+        (0): Conv1d(512, 512, kernel_size=(5,), stride=(1,), padding=(2,))
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (lstm): LSTM(512, 256, batch_first=True, bidirectional=True)
+  )
+  (decoder): _Decoder(
+    (prenet): _Prenet(
+      (layers): ModuleList(
+        (0): Linear(in_features=80, out_features=256, bias=False)
+        (1): Linear(in_features=256, out_features=256, bias=False)
+      )
+    )
+    (attention_rnn): LSTMCell(768, 1024)
+    (attention_layer): _Attention(
+      (query_layer): Linear(in_features=1024, out_features=128, bias=False)
+      (memory_layer): Linear(in_features=512, out_features=128, bias=False)
+      (v): Linear(in_features=128, out_features=1, bias=False)
+      (location_layer): _LocationLayer(
+        (location_conv): Conv1d(2, 32, kernel_size=(31,), stride=(1,), padding=(15,), bias=False)
+        (location_dense): Linear(in_features=32, out_features=128, bias=False)
+      )
+    )
+    (decoder_rnn): LSTMCell(1536, 1024)
+    (linear_projection): Linear(in_features=1536, out_features=80, bias=True)
+    (gate_layer): Linear(in_features=1536, out_features=1, bias=True)
+  )
+  (postnet): _Postnet(
+    (convolutions): ModuleList(
+      (0): Sequential(
+        (0): Conv1d(80, 512, kernel_size=(5,), stride=(1,), padding=(2,))
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1-3): 3 x Sequential(
+        (0): Conv1d(512, 512, kernel_size=(5,), stride=(1,), padding=(2,))
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (4): Sequential(
+        (0): Conv1d(512, 80, kernel_size=(5,), stride=(1,), padding=(2,))
+        (1): BatchNorm1d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+)

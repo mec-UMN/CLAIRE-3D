@@ -1,0 +1,44 @@
+Conformer(
+  (conformer_layers): ModuleList(
+    (0-3): 4 x ConformerLayer(
+      (ffn1): _FeedForwardModule(
+        (sequential): Sequential(
+          (0): LayerNorm((80,), eps=1e-05, elementwise_affine=True)
+          (1): Linear(in_features=80, out_features=128, bias=True)
+          (2): SiLU()
+          (3): Dropout(p=0.0, inplace=False)
+          (4): Linear(in_features=128, out_features=80, bias=True)
+          (5): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (self_attn_layer_norm): LayerNorm((80,), eps=1e-05, elementwise_affine=True)
+      (self_attn): MultiheadAttention(
+        (out_proj): NonDynamicallyQuantizableLinear(in_features=80, out_features=80, bias=True)
+      )
+      (self_attn_dropout): Dropout(p=0.0, inplace=False)
+      (conv_module): _ConvolutionModule(
+        (layer_norm): LayerNorm((80,), eps=1e-05, elementwise_affine=True)
+        (sequential): Sequential(
+          (0): Conv1d(80, 160, kernel_size=(1,), stride=(1,))
+          (1): GLU(dim=1)
+          (2): Conv1d(80, 80, kernel_size=(31,), stride=(1,), padding=(15,), groups=80)
+          (3): BatchNorm1d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (4): SiLU()
+          (5): Conv1d(80, 80, kernel_size=(1,), stride=(1,))
+          (6): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (ffn2): _FeedForwardModule(
+        (sequential): Sequential(
+          (0): LayerNorm((80,), eps=1e-05, elementwise_affine=True)
+          (1): Linear(in_features=80, out_features=128, bias=True)
+          (2): SiLU()
+          (3): Dropout(p=0.0, inplace=False)
+          (4): Linear(in_features=128, out_features=80, bias=True)
+          (5): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (final_layer_norm): LayerNorm((80,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)

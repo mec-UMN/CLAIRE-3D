@@ -1,0 +1,39 @@
+GraphormerModel(
+  (graph_encoder): GraphormerGraphEncoder(
+    (dropout_module): Dropout(p=0.0, inplace=False)
+    (graph_node_feature): GraphormerGraphNodeFeature(
+      (atom_encoder): Embedding(4609, 768, padding_idx=0)
+      (in_degree_encoder): Embedding(512, 768, padding_idx=0)
+      (out_degree_encoder): Embedding(512, 768, padding_idx=0)
+      (graph_token): Embedding(1, 768)
+    )
+    (graph_attn_bias): GraphormerGraphAttnBias(
+      (edge_encoder): Embedding(1537, 32, padding_idx=0)
+      (edge_dis_encoder): Embedding(131072, 1)
+      (spatial_pos_encoder): Embedding(512, 32, padding_idx=0)
+      (graph_token_virtual_distance): Embedding(1, 32)
+    )
+    (emb_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0-11): 12 x GraphormerGraphEncoderLayer(
+        (dropout_module): Dropout(p=0.0, inplace=False)
+        (activation_dropout_module): Dropout(p=0.1, inplace=False)
+        (activation_fn): GELUActivation_1()
+        (self_attn): GraphormerMultiheadAttention(
+          (attention_dropout_module): Dropout(p=0.1, inplace=False)
+          (k_proj): Linear1(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear2(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear1(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear2(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear1(in_features=768, out_features=768, bias=True)
+        (fc2): Linear2(in_features=768, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (lm_head_transform_weight): Linear1(in_features=768, out_features=768, bias=True)
+  (activation_fn): GELUActivation_2()
+  (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+)

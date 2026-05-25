@@ -1,0 +1,41 @@
+RobertaModel(
+  (embeddings): RobertaEmbeddings(
+    (word_embeddings): Embedding(50265, 768, padding_idx=1)
+    (position_embeddings): Embedding(514, 768, padding_idx=1)
+    (token_type_embeddings): Embedding(1, 768)
+    (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+  (encoder): RobertaEncoder(
+    (layer): ModuleList(
+      (0-5): 6 x RobertaLayer(
+        (attention): RobertaAttention(
+          (self): RobertaSdpaSelfAttention(
+            (query): Linear1(in_features=768, out_features=768, bias=True)
+            (key): Linear2(in_features=768, out_features=768, bias=True)
+            (value): Linear1(in_features=768, out_features=768, bias=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+          (output): RobertaSelfOutput(
+            (dense): Linear2(in_features=768, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (intermediate): RobertaIntermediate(
+          (dense): Linear1(in_features=768, out_features=3072, bias=True)
+          (intermediate_act_fn): GELUActivation_1()
+        )
+        (output): RobertaOutput(
+          (dense): Linear2(in_features=3072, out_features=768, bias=True)
+          (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (pooler): RobertaPooler(
+    (dense): Linear1(in_features=768, out_features=768, bias=True)
+    (activation): Tanh1()
+  )
+)

@@ -1,0 +1,37 @@
+ASTModel(
+  (embeddings): ASTEmbeddings(
+    (patch_embeddings): ASTPatchEmbeddings(
+      (projection): Conv2d(1, 768, kernel_size=(16, 16), stride=(10, 10))
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (encoder): ASTEncoder(
+    (layer): ModuleList(
+      (0-11): 12 x ASTLayer(
+        (attention): ASTSdpaAttention(
+          (attention): ASTSdpaSelfAttention(
+            (query): Linear1(in_features=768, out_features=768, bias=True)
+            (key): Linear2(in_features=768, out_features=768, bias=True)
+            (value): Linear1(in_features=768, out_features=768, bias=True)
+            (dropout): Dropout(p=0.0, inplace=False)
+          )
+          (output): ASTSelfOutput(
+            (dense): Linear2(in_features=768, out_features=768, bias=True)
+            (dropout): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (intermediate): ASTIntermediate(
+          (dense): Linear1(in_features=768, out_features=3072, bias=True)
+          (intermediate_act_fn): GELUActivation_1()
+        )
+        (output): ASTOutput(
+          (dense): Linear2(in_features=3072, out_features=768, bias=True)
+          (dropout): Dropout(p=0.0, inplace=False)
+        )
+        (layernorm_before): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (layernorm_after): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      )
+    )
+  )
+  (layernorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+)

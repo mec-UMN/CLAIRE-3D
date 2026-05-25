@@ -1,0 +1,16 @@
+DeepSpeech(
+  (fc1): FullyConnected(
+    (fc): Linear(in_features=80, out_features=2048, bias=True)
+  )
+  (fc2): FullyConnected(
+    (fc): Linear(in_features=2048, out_features=2048, bias=True)
+  )
+  (fc3): FullyConnected(
+    (fc): Linear(in_features=2048, out_features=2048, bias=True)
+  )
+  (bi_rnn): RNN(2048, 2048, bidirectional=True)
+  (fc4): FullyConnected(
+    (fc): Linear(in_features=2048, out_features=2048, bias=True)
+  )
+  (out): Linear(in_features=2048, out_features=40, bias=True)
+)

@@ -1,0 +1,64 @@
+MobileBertModel(
+  (embeddings): MobileBertEmbeddings(
+    (word_embeddings): Embedding(30522, 128, padding_idx=0)
+    (position_embeddings): Embedding(512, 512)
+    (token_type_embeddings): Embedding(2, 512)
+    (embedding_transformation): Linear(in_features=384, out_features=512, bias=True)
+    (LayerNorm): NoNorm()
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (encoder): MobileBertEncoder(
+    (layer): ModuleList(
+      (0-23): 24 x MobileBertLayer(
+        (attention): MobileBertAttention(
+          (self): MobileBertSelfAttention(
+            (query): Linear(in_features=128, out_features=128, bias=True)
+            (key): Linear(in_features=128, out_features=128, bias=True)
+            (value): Linear(in_features=512, out_features=128, bias=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+          (output): MobileBertSelfOutput(
+            (dense): Linear(in_features=128, out_features=128, bias=True)
+            (LayerNorm): NoNorm()
+          )
+        )
+        (intermediate): MobileBertIntermediate(
+          (dense): Linear(in_features=128, out_features=512, bias=True)
+          (intermediate_act_fn): ReLU()
+        )
+        (output): MobileBertOutput(
+          (dense): Linear(in_features=512, out_features=128, bias=True)
+          (LayerNorm): NoNorm()
+          (bottleneck): OutputBottleneck(
+            (dense): Linear(in_features=128, out_features=512, bias=True)
+            (LayerNorm): NoNorm()
+            (dropout): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (bottleneck): Bottleneck(
+          (input): BottleneckLayer(
+            (dense): Linear(in_features=512, out_features=128, bias=True)
+            (LayerNorm): NoNorm()
+          )
+          (attention): BottleneckLayer(
+            (dense): Linear(in_features=512, out_features=128, bias=True)
+            (LayerNorm): NoNorm()
+          )
+        )
+        (ffn): ModuleList(
+          (0-2): 3 x FFNLayer(
+            (intermediate): MobileBertIntermediate(
+              (dense): Linear(in_features=128, out_features=512, bias=True)
+              (intermediate_act_fn): ReLU()
+            )
+            (output): FFNOutput(
+              (dense): Linear(in_features=512, out_features=128, bias=True)
+              (LayerNorm): NoNorm()
+            )
+          )
+        )
+      )
+    )
+  )
+  (pooler): MobileBertPooler()
+)
