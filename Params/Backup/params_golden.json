@@ -1,0 +1,8 @@
+{
+    "row_PE": 8,
+    "col_PE": 8,
+    "n_SA": 8,
+    "no_outs_adder": 32,
+    "no_adders": 64,
+    "no_modules": 4
+}

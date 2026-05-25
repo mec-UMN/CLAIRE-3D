@@ -1,0 +1,160 @@
+[
+    [
+        {
+            "row_PE": 64,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 128,
+            "n_SA": 32,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 64,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 64,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 64,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 128,
+            "no_modules": 64
+        }
+    ],
+    [
+        [
+            "LINEAR",
+            "SILU"
+        ],
+        [
+            "LINEAR",
+            "GELU",
+            "CONV1D"
+        ],
+        [
+            "GELU",
+            "CONV1D"
+        ],
+        [
+            "LINEAR",
+            "GELU",
+            "TANH"
+        ],
+        [
+            "LINEAR",
+            "SILU"
+        ],
+        [
+            "LINEAR",
+            "GELU"
+        ],
+        [
+            "CONV2D",
+            "RELU",
+            "MAXPOOL2D",
+            "LINEAR",
+            "ADAPTIVEAVGPOOL2D"
+        ],
+        [
+            "CONV2D",
+            "RELU",
+            "MAXPOOL2D",
+            "LINEAR",
+            "ADAPTIVEAVGPOOL2D"
+        ],
+        [
+            "CONV2D",
+            "RELU",
+            "MAXPOOL2D",
+            "LINEAR",
+            "AVGPOOL2D"
+        ],
+        [
+            "ROIALIGN",
+            "LASTLEVELMAXPOOL",
+            "CONV2D",
+            "CONVTRANSPOSE2D",
+            "RELU",
+            "FLATTEN",
+            "LINEAR"
+        ],
+        [
+            "CONV2D",
+            "RELU",
+            "MAXPOOL2D",
+            "LINEAR",
+            "ADAPTIVEAVGPOOL2D"
+        ],
+        [
+            "LINEAR",
+            "RELU6",
+            "CONV2D"
+        ],
+        [
+            "CONV2D",
+            "GELU",
+            "FLATTEN",
+            "PERMUTE",
+            "LINEAR",
+            "ADAPTIVEAVGPOOL2D"
+        ]
+    ]
+]

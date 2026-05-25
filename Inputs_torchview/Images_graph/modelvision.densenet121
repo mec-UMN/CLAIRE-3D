@@ -1,0 +1,1713 @@
+strict digraph model {
+	graph [ordering=in rankdir=TB size="211.2,211.2"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
+	edge [fontsize=10]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 3, 224, 224) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56), (1, 32, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56), 2 x (1, 32, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56), 3 x (1, 32, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56), 4 x (1, 32, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56), 5 x (1, 32, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56), 6 x (1, 32, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 128, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">AvgPool2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 2 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 3 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 4 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 5 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 6 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 7 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 8 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 9 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 10 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 11 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	28 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28), 12 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	31 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 256, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">AvgPool2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	33 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 2 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 3 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 4 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 5 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 6 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	40 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 7 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	41 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 8 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	42 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 9 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	43 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 10 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	44 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 11 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	45 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 12 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	46 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 13 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	47 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 14 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	48 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 15 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	49 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 16 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	50 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 17 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	51 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 18 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	52 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 19 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	53 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 20 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	54 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 21 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	55 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 22 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	56 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 23 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	57 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14), 24 x (1, 32, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	58 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	59 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	60 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 512, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	61 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">AvgPool2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	62 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	63 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	64 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 2 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	65 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 3 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	66 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 4 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	67 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 5 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	68 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 6 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	69 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 7 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	70 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 8 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	71 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 9 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	72 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 10 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	73 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 11 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	74 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 12 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	75 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 13 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	76 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 14 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	77 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseLayer<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 15 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	78 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7), 16 x (1, 32, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	79 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	80 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	81 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">adaptive_avg_pool2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 1, 1) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	82 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">flatten<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 1, 1) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	83 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1000) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	84 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1000)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	4 -> 6
+	4 -> 7
+	4 -> 8
+	4 -> 9
+	4 -> 10
+	4 -> 11
+	5 -> 6
+	5 -> 7
+	5 -> 8
+	5 -> 9
+	5 -> 10
+	5 -> 11
+	6 -> 7
+	6 -> 8
+	6 -> 9
+	6 -> 10
+	6 -> 11
+	7 -> 8
+	7 -> 9
+	7 -> 10
+	7 -> 11
+	8 -> 9
+	8 -> 10
+	8 -> 11
+	9 -> 10
+	9 -> 11
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	15 -> 17
+	15 -> 18
+	15 -> 19
+	15 -> 20
+	15 -> 21
+	15 -> 22
+	15 -> 23
+	15 -> 24
+	15 -> 25
+	15 -> 26
+	15 -> 27
+	15 -> 28
+	16 -> 17
+	16 -> 18
+	16 -> 19
+	16 -> 20
+	16 -> 21
+	16 -> 22
+	16 -> 23
+	16 -> 24
+	16 -> 25
+	16 -> 26
+	16 -> 27
+	16 -> 28
+	17 -> 18
+	17 -> 19
+	17 -> 20
+	17 -> 21
+	17 -> 22
+	17 -> 23
+	17 -> 24
+	17 -> 25
+	17 -> 26
+	17 -> 27
+	17 -> 28
+	18 -> 19
+	18 -> 20
+	18 -> 21
+	18 -> 22
+	18 -> 23
+	18 -> 24
+	18 -> 25
+	18 -> 26
+	18 -> 27
+	18 -> 28
+	19 -> 20
+	19 -> 21
+	19 -> 22
+	19 -> 23
+	19 -> 24
+	19 -> 25
+	19 -> 26
+	19 -> 27
+	19 -> 28
+	20 -> 21
+	20 -> 22
+	20 -> 23
+	20 -> 24
+	20 -> 25
+	20 -> 26
+	20 -> 27
+	20 -> 28
+	21 -> 22
+	21 -> 23
+	21 -> 24
+	21 -> 25
+	21 -> 26
+	21 -> 27
+	21 -> 28
+	22 -> 23
+	22 -> 24
+	22 -> 25
+	22 -> 26
+	22 -> 27
+	22 -> 28
+	23 -> 24
+	23 -> 25
+	23 -> 26
+	23 -> 27
+	23 -> 28
+	24 -> 25
+	24 -> 26
+	24 -> 27
+	24 -> 28
+	25 -> 26
+	25 -> 27
+	25 -> 28
+	26 -> 27
+	26 -> 28
+	27 -> 28
+	28 -> 29
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	32 -> 34
+	32 -> 35
+	32 -> 36
+	32 -> 37
+	32 -> 38
+	32 -> 39
+	32 -> 40
+	32 -> 41
+	32 -> 42
+	32 -> 43
+	32 -> 44
+	32 -> 45
+	32 -> 46
+	32 -> 47
+	32 -> 48
+	32 -> 49
+	32 -> 50
+	32 -> 51
+	32 -> 52
+	32 -> 53
+	32 -> 54
+	32 -> 55
+	32 -> 56
+	32 -> 57
+	33 -> 34
+	33 -> 35
+	33 -> 36
+	33 -> 37
+	33 -> 38
+	33 -> 39
+	33 -> 40
+	33 -> 41
+	33 -> 42
+	33 -> 43
+	33 -> 44
+	33 -> 45
+	33 -> 46
+	33 -> 47
+	33 -> 48
+	33 -> 49
+	33 -> 50
+	33 -> 51
+	33 -> 52
+	33 -> 53
+	33 -> 54
+	33 -> 55
+	33 -> 56
+	33 -> 57
+	34 -> 35
+	34 -> 36
+	34 -> 37
+	34 -> 38
+	34 -> 39
+	34 -> 40
+	34 -> 41
+	34 -> 42
+	34 -> 43
+	34 -> 44
+	34 -> 45
+	34 -> 46
+	34 -> 47
+	34 -> 48
+	34 -> 49
+	34 -> 50
+	34 -> 51
+	34 -> 52
+	34 -> 53
+	34 -> 54
+	34 -> 55
+	34 -> 56
+	34 -> 57
+	35 -> 36
+	35 -> 37
+	35 -> 38
+	35 -> 39
+	35 -> 40
+	35 -> 41
+	35 -> 42
+	35 -> 43
+	35 -> 44
+	35 -> 45
+	35 -> 46
+	35 -> 47
+	35 -> 48
+	35 -> 49
+	35 -> 50
+	35 -> 51
+	35 -> 52
+	35 -> 53
+	35 -> 54
+	35 -> 55
+	35 -> 56
+	35 -> 57
+	36 -> 37
+	36 -> 38
+	36 -> 39
+	36 -> 40
+	36 -> 41
+	36 -> 42
+	36 -> 43
+	36 -> 44
+	36 -> 45
+	36 -> 46
+	36 -> 47
+	36 -> 48
+	36 -> 49
+	36 -> 50
+	36 -> 51
+	36 -> 52
+	36 -> 53
+	36 -> 54
+	36 -> 55
+	36 -> 56
+	36 -> 57
+	37 -> 38
+	37 -> 39
+	37 -> 40
+	37 -> 41
+	37 -> 42
+	37 -> 43
+	37 -> 44
+	37 -> 45
+	37 -> 46
+	37 -> 47
+	37 -> 48
+	37 -> 49
+	37 -> 50
+	37 -> 51
+	37 -> 52
+	37 -> 53
+	37 -> 54
+	37 -> 55
+	37 -> 56
+	37 -> 57
+	38 -> 39
+	38 -> 40
+	38 -> 41
+	38 -> 42
+	38 -> 43
+	38 -> 44
+	38 -> 45
+	38 -> 46
+	38 -> 47
+	38 -> 48
+	38 -> 49
+	38 -> 50
+	38 -> 51
+	38 -> 52
+	38 -> 53
+	38 -> 54
+	38 -> 55
+	38 -> 56
+	38 -> 57
+	39 -> 40
+	39 -> 41
+	39 -> 42
+	39 -> 43
+	39 -> 44
+	39 -> 45
+	39 -> 46
+	39 -> 47
+	39 -> 48
+	39 -> 49
+	39 -> 50
+	39 -> 51
+	39 -> 52
+	39 -> 53
+	39 -> 54
+	39 -> 55
+	39 -> 56
+	39 -> 57
+	40 -> 41
+	40 -> 42
+	40 -> 43
+	40 -> 44
+	40 -> 45
+	40 -> 46
+	40 -> 47
+	40 -> 48
+	40 -> 49
+	40 -> 50
+	40 -> 51
+	40 -> 52
+	40 -> 53
+	40 -> 54
+	40 -> 55
+	40 -> 56
+	40 -> 57
+	41 -> 42
+	41 -> 43
+	41 -> 44
+	41 -> 45
+	41 -> 46
+	41 -> 47
+	41 -> 48
+	41 -> 49
+	41 -> 50
+	41 -> 51
+	41 -> 52
+	41 -> 53
+	41 -> 54
+	41 -> 55
+	41 -> 56
+	41 -> 57
+	42 -> 43
+	42 -> 44
+	42 -> 45
+	42 -> 46
+	42 -> 47
+	42 -> 48
+	42 -> 49
+	42 -> 50
+	42 -> 51
+	42 -> 52
+	42 -> 53
+	42 -> 54
+	42 -> 55
+	42 -> 56
+	42 -> 57
+	43 -> 44
+	43 -> 45
+	43 -> 46
+	43 -> 47
+	43 -> 48
+	43 -> 49
+	43 -> 50
+	43 -> 51
+	43 -> 52
+	43 -> 53
+	43 -> 54
+	43 -> 55
+	43 -> 56
+	43 -> 57
+	44 -> 45
+	44 -> 46
+	44 -> 47
+	44 -> 48
+	44 -> 49
+	44 -> 50
+	44 -> 51
+	44 -> 52
+	44 -> 53
+	44 -> 54
+	44 -> 55
+	44 -> 56
+	44 -> 57
+	45 -> 46
+	45 -> 47
+	45 -> 48
+	45 -> 49
+	45 -> 50
+	45 -> 51
+	45 -> 52
+	45 -> 53
+	45 -> 54
+	45 -> 55
+	45 -> 56
+	45 -> 57
+	46 -> 47
+	46 -> 48
+	46 -> 49
+	46 -> 50
+	46 -> 51
+	46 -> 52
+	46 -> 53
+	46 -> 54
+	46 -> 55
+	46 -> 56
+	46 -> 57
+	47 -> 48
+	47 -> 49
+	47 -> 50
+	47 -> 51
+	47 -> 52
+	47 -> 53
+	47 -> 54
+	47 -> 55
+	47 -> 56
+	47 -> 57
+	48 -> 49
+	48 -> 50
+	48 -> 51
+	48 -> 52
+	48 -> 53
+	48 -> 54
+	48 -> 55
+	48 -> 56
+	48 -> 57
+	49 -> 50
+	49 -> 51
+	49 -> 52
+	49 -> 53
+	49 -> 54
+	49 -> 55
+	49 -> 56
+	49 -> 57
+	50 -> 51
+	50 -> 52
+	50 -> 53
+	50 -> 54
+	50 -> 55
+	50 -> 56
+	50 -> 57
+	51 -> 52
+	51 -> 53
+	51 -> 54
+	51 -> 55
+	51 -> 56
+	51 -> 57
+	52 -> 53
+	52 -> 54
+	52 -> 55
+	52 -> 56
+	52 -> 57
+	53 -> 54
+	53 -> 55
+	53 -> 56
+	53 -> 57
+	54 -> 55
+	54 -> 56
+	54 -> 57
+	55 -> 56
+	55 -> 57
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	59 -> 60
+	60 -> 61
+	61 -> 62
+	61 -> 63
+	61 -> 64
+	61 -> 65
+	61 -> 66
+	61 -> 67
+	61 -> 68
+	61 -> 69
+	61 -> 70
+	61 -> 71
+	61 -> 72
+	61 -> 73
+	61 -> 74
+	61 -> 75
+	61 -> 76
+	61 -> 77
+	61 -> 78
+	62 -> 63
+	62 -> 64
+	62 -> 65
+	62 -> 66
+	62 -> 67
+	62 -> 68
+	62 -> 69
+	62 -> 70
+	62 -> 71
+	62 -> 72
+	62 -> 73
+	62 -> 74
+	62 -> 75
+	62 -> 76
+	62 -> 77
+	62 -> 78
+	63 -> 64
+	63 -> 65
+	63 -> 66
+	63 -> 67
+	63 -> 68
+	63 -> 69
+	63 -> 70
+	63 -> 71
+	63 -> 72
+	63 -> 73
+	63 -> 74
+	63 -> 75
+	63 -> 76
+	63 -> 77
+	63 -> 78
+	64 -> 65
+	64 -> 66
+	64 -> 67
+	64 -> 68
+	64 -> 69
+	64 -> 70
+	64 -> 71
+	64 -> 72
+	64 -> 73
+	64 -> 74
+	64 -> 75
+	64 -> 76
+	64 -> 77
+	64 -> 78
+	65 -> 66
+	65 -> 67
+	65 -> 68
+	65 -> 69
+	65 -> 70
+	65 -> 71
+	65 -> 72
+	65 -> 73
+	65 -> 74
+	65 -> 75
+	65 -> 76
+	65 -> 77
+	65 -> 78
+	66 -> 67
+	66 -> 68
+	66 -> 69
+	66 -> 70
+	66 -> 71
+	66 -> 72
+	66 -> 73
+	66 -> 74
+	66 -> 75
+	66 -> 76
+	66 -> 77
+	66 -> 78
+	67 -> 68
+	67 -> 69
+	67 -> 70
+	67 -> 71
+	67 -> 72
+	67 -> 73
+	67 -> 74
+	67 -> 75
+	67 -> 76
+	67 -> 77
+	67 -> 78
+	68 -> 69
+	68 -> 70
+	68 -> 71
+	68 -> 72
+	68 -> 73
+	68 -> 74
+	68 -> 75
+	68 -> 76
+	68 -> 77
+	68 -> 78
+	69 -> 70
+	69 -> 71
+	69 -> 72
+	69 -> 73
+	69 -> 74
+	69 -> 75
+	69 -> 76
+	69 -> 77
+	69 -> 78
+	70 -> 71
+	70 -> 72
+	70 -> 73
+	70 -> 74
+	70 -> 75
+	70 -> 76
+	70 -> 77
+	70 -> 78
+	71 -> 72
+	71 -> 73
+	71 -> 74
+	71 -> 75
+	71 -> 76
+	71 -> 77
+	71 -> 78
+	72 -> 73
+	72 -> 74
+	72 -> 75
+	72 -> 76
+	72 -> 77
+	72 -> 78
+	73 -> 74
+	73 -> 75
+	73 -> 76
+	73 -> 77
+	73 -> 78
+	74 -> 75
+	74 -> 76
+	74 -> 77
+	74 -> 78
+	75 -> 76
+	75 -> 77
+	75 -> 78
+	76 -> 77
+	76 -> 78
+	77 -> 78
+	78 -> 79
+	79 -> 80
+	80 -> 81
+	81 -> 82
+	82 -> 83
+	83 -> 84
+}

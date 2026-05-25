@@ -1,0 +1,283 @@
+[
+    [
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 16,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 16,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 64,
+            "col_PE": 64,
+            "n_SA": 32,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        },
+        {
+            "row_PE": 32,
+            "col_PE": 32,
+            "n_SA": 64,
+            "no_modules_act": 64,
+            "no_modules_pool": 64
+        }
+    ],
+    [
+        [
+            "CONV1D",
+            "LINEAR",
+            "GELU"
+        ],
+        [
+            "CONV1D",
+            "GELU"
+        ],
+        [
+            "LINEAR",
+            "GELU",
+            "TANH"
+        ],
+        [
+            "LINEAR",
+            "SILU"
+        ],
+        [
+            "LINEAR",
+            "GELU"
+        ],
+        [
+            "LINEAR",
+            "MAXPOOL2D",
+            "RELU",
+            "CONV2D",
+            "ADAPTIVEAVGPOOL2D"
+        ],
+        [
+            "LINEAR",
+            "MAXPOOL2D",
+            "RELU",
+            "CONV2D",
+            "ADAPTIVEAVGPOOL2D"
+        ],
+        [
+            "LINEAR",
+            "MAXPOOL2D",
+            "AVGPOOL2D",
+            "RELU",
+            "CONV2D"
+        ],
+        [
+            "ROIALIGN",
+            "LINEAR",
+            "FLATTEN",
+            "CONVTRANSPOSE2D",
+            "LASTLEVELMAXPOOL",
+            "RELU",
+            "CONV2D"
+        ],
+        [
+            "CONV2D",
+            "LINEAR",
+            "RELU6"
+        ],
+        [
+            "FLATTEN",
+            "LINEAR",
+            "GELU",
+            "CONV2D",
+            "ADAPTIVEAVGPOOL2D",
+            "PERMUTE"
+        ],
+        [
+            "CONV2D",
+            "ADAPTIVEAVGPOOL2D",
+            "RELU",
+            "MAXPOOL2D"
+        ],
+        [
+            "CONV2D",
+            "RELU",
+            "MEANSHIFT",
+            "UPSAMPLER"
+        ],
+        [
+            "LINEAR",
+            "RELU"
+        ],
+        [
+            "CONV2D",
+            "LINEAR",
+            "SILU"
+        ],
+        [
+            "CONV1D",
+            "RELU",
+            "CONVTRANSPOSE1D",
+            "PRELU"
+        ],
+        [
+            "SILU",
+            "LINEAR",
+            "SIGMOID",
+            "CONV2D",
+            "ADAPTIVEAVGPOOL2D"
+        ],
+        [
+            "LINEAR",
+            "SILU"
+        ],
+        [
+            "LINEAR",
+            "RELU"
+        ],
+        [
+            "LINEAR",
+            "GELU"
+        ],
+        [
+            "LINEAR",
+            "MOBILEBERTPOOLER",
+            "RELU"
+        ],
+        [
+            "LINEAR",
+            "MAXPOOL2D",
+            "RELU",
+            "CONV2D",
+            "ADAPTIVEAVGPOOL2D"
+        ]
+    ]
+]

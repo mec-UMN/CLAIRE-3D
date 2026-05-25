@@ -1,0 +1,6 @@
+{
+    "vgg16": 138,
+    "swint": 29,
+    "peanutRCNN": 14.21,
+    "bert": 110
+}

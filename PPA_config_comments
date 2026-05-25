@@ -1,0 +1,110 @@
+Scalng factors: http://vcl.ece.ucdavis.edu/pubs/2017.02.VLSIintegration.TechScale/VLSI-Scaling-Stillmaker.pdf
+
+TANH: 
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8540238
+Data at 90nm
+voltage: Unknown?
+clock:Unknown?
+Area Scaling factor 90-32nm: S^2:  6.1
+Area=3.65e-9/6.1=5.98e-10
+Latency=1.72e-9/sqrt(6.1)=6.96-10
+Power=8.162e-5/6.1=1.34e-5
+Energy=1.34e-5*6.96e-10=9.33e-15
+
+
+Adder:
+https://ieeexplore.ieee.org/document/9458501
+Voltage:0.9V
+clock:100MHz
+Scaling factor from 40nm to 28nm: 0.49 #HISIM
+
+Area of adder in the chip:3.291e-9
+number of full adders in the chip : 704+112/2=760
+Area of a single full adder: 3.291e-9/760= 4.33e-12
+Area of a 8-bit adder: 4.33e-12*15=6.49e-11
+Sacled area: 6.49e-11*0.49=3.18e-11
+
+Energy of adder in the chip: 0.6e-12
+Energy of single full adder: 0.6e-12/760=7.89e-16
+Energy of 8-bit adder=7.89e-16*15=1.183e-15
+Scaled Energy=1.183e-15*0.49=5.79e-16
+
+NoC router: https://ieeexplore.ieee.org/document/7707441
+voltage: 1.2V
+technode: 65nm
+clock: 1.2GHz
+Max throughput NoC_1.2GHz: 890Mbps  # for 1.2GHz
+Max throughput NoC: 890Mbps*1/1.2  # for 1GHz
+J_b_router: 6.9e-13*0.9^2/1.2^2=3.88e-13
+
+Maxpool: from Neurosim Simulation
+voltage: 0.9
+technode: 32nm
+
+RELU from SA: from neurosim Simulation
+voltage: 0.9V
+technode: 28nm
+clock: 1GHz
+
+3D:
+C_load: 1.732fF for driver and 0.64fF for 1um HBI
+
+AIB:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10374406
+voltage_IO: 0.4V
+technode: 22nm
+clock: 2GHz
+BW_aib_2GHz: 320e9     #1 aib channel bandwidth: 4Gbps for 80 TX/Rx lines =320 Gbps 
+BW_mm2_aib: 1705e9    # @2GHz 
+area_aib (m2): 320e9/1705e9 *1e-6= 1.8e-7  #for one channel
+BW_aib: 160e9     #convert to 1GHZ clock
+J_b_aib: 4.6e-13*0.9^2/0.85^2+1e-13=6.16e-13 #core voltage operates at 0.85V - converting to 0.9V
+n_IOs: 102 #80 data lines 
+
+GRS:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6487789
+voltage: 0.92V
+technode: 28nm
+clock: 10GHz
+BW_grs_10GHz: 320e9  # 20Gbps per pin, 16 data lines per brick - for 10GHz
+BW_grs: 32e9      #Scale to 1GHz
+area_grs: 9.5e-8   #for one brick/16 data pins/lines
+J_b_grs: 5.4e-13*0.9^2/0.92^2  = 5.17e-13 #SCALING TO 0.9v
+n_IOs: 18 #16 data lines+2 clock lines
+
+
+NRZ:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9366048
+voltage: unknown 
+technode: 7nm
+clock: 10GHz
+BW_nrz_10GHz: 240e9  #40Gbps per lane, 6 Tx lanes per link- for 10GHz
+BW_nrz: 24e9      #Scale to 1GHz
+area_nrz: 3.3e-7  #for one link/6 lanes
+J_b_nrz:  1.7e-12
+n_IOs: 7 #6 data lines+1 spatial encoding
+
+UCIE3d:
+spec: UCIe 2.0 spec
+technode: same as chiplet
+area_ucie3d: 21*11*1.68*0.9*1e-12= 3.49e-10 #x80 module, a driver of area 1.68um *0.9 um
+BW_ucie3d:  160*1e9 = 1.6e11  #160 Gbps per module
+VddIO_ucie3d: same as chiplet
+N_IOs_ucie3d:  231 # 80 tx + 80 rx + 2 clk + 69 power/ground
+N_IOs_signal_ucie3d: 160 # 80 tx + 80 rx
+J_b_ucie3d:  0.02e-12 # <0.02 pJ per bit for 3um HBI pitch ot <0.05 pJ for 9um HBI pitch
+BW_m2_ucie3d: 160e9/3.49e-10=4.58e18
+
+IO:
+TSMC28nm -PRDW12SDGZ_H_G
+#assuming length of Nop Interface 1mm =>  cload is 0.5pF , PTM Model
+
+Cost:
+#28nm costs
+#backend: physical design and implementation including cost of EDA tools for automated steps of the physical design:
+NRE_backend_cost_logic (cost/mm2): (1000K+3*200k)/25 # 3 people team for backend logic with 200k per person per year for 25mm2 chip. 1000K for synposys tools
+NRE_frontend_cost_logic (cost/mm2):5*200K/25  # 5 people team for front end logic with 200k per person per year for 25mm2 chip. Frontend: system definition and HDL development and testing.
+NRE_backend_cost_mem (cost/mm2):(300K+1*200k)/25  # 1 people team for backend memory with 200k per person per year for 25mm2 chip. 300K for memory compiler
+NRE_frontend_cost_mem (cost/mm2): (3*200K)/25  # 3 people team for front end memory with 200k per person per year for 25mm2 chip. Frontend: system definition and HDL development and testing.
+NRE_mask_cost: $2M # mask cost for 2 steps/layer
+#wafer cost - $10k per wafer

@@ -1,0 +1,2381 @@
+strict digraph model {
+	graph [ordering=in rankdir=TB size="159.6,159.6"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
+	edge [fontsize=10]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	subgraph cluster_2 {
+		fontsize=12 label=Sequential labeljust=l style=dashed
+		subgraph cluster_3 {
+			fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+			1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 3, 224, 224) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		}
+		subgraph cluster_4 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_5 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_6 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+		}
+		subgraph cluster_7 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_8 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_9 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_10 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+		}
+		subgraph cluster_11 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_12 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_13 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_14 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 24, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_15 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_16 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_17 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 24, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					28 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_18 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					31 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 144, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 144, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				33 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+		}
+		subgraph cluster_19 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_20 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_21 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_22 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				40 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				41 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			42 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_23 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_24 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_25 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					43 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					44 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					45 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_26 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					46 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					47 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					48 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				49 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				50 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			51 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_27 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_28 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_29 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					52 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					53 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					54 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_30 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					55 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					56 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					57 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 192, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				58 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 192, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				59 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+		}
+		subgraph cluster_31 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_32 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_33 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					60 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					61 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					62 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_34 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					63 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					64 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					65 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				66 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				67 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			68 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_35 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_36 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_37 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					69 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					70 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					71 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_38 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					72 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					73 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					74 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				75 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				76 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			77 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_39 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_40 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_41 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					78 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					79 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					80 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_42 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					81 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					82 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					83 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				84 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				85 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			86 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_43 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_44 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_45 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					87 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					88 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					89 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_46 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					90 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					91 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					92 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				93 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 384, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				94 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+		}
+		subgraph cluster_47 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_48 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_49 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					95 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					96 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					97 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_50 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					98 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					99 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					100 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				101 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				102 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			103 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_51 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_52 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_53 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					104 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					105 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					106 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_54 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					107 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					108 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					109 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				110 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				111 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			112 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_55 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_56 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_57 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					113 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					114 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					115 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_58 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					116 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					117 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					118 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 576, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				119 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 576, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				120 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+		}
+		subgraph cluster_59 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_60 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_61 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					121 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					122 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					123 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_62 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					124 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					125 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					126 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				127 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				128 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			129 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_63 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_64 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_65 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					130 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					131 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					132 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_66 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					133 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					134 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					135 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				136 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				137 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+			138 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		}
+		subgraph cluster_67 {
+			fontsize=12 label=InvertedResidual labeljust=l style=dashed
+			subgraph cluster_68 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				subgraph cluster_69 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					139 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 160, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					140 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					141 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				subgraph cluster_70 {
+					fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+					142 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					143 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+					144 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:5</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				}
+				145 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 960, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 320, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+				146 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 320, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 320, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			}
+		}
+		subgraph cluster_71 {
+			fontsize=12 label=Conv2dNormActivation labeljust=l style=dashed
+			147 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 320, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1280, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			148 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1280, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1280, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			149 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU6<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1280, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1280, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		}
+	}
+	150 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">adaptive_avg_pool2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1280, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1280, 1, 1) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	151 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">flatten<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1280, 1, 1) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1280) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	subgraph cluster_72 {
+		fontsize=12 label=Sequential labeljust=l style=dashed
+		152 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1280) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1280) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		153 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1280) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1000) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		154 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1000)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	}
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	16 -> 25
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	20 -> 21
+	21 -> 22
+	22 -> 23
+	23 -> 24
+	24 -> 25
+	25 -> 26
+	26 -> 27
+	27 -> 28
+	28 -> 29
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	33 -> 42
+	33 -> 34
+	34 -> 35
+	35 -> 36
+	36 -> 37
+	37 -> 38
+	38 -> 39
+	39 -> 40
+	40 -> 41
+	41 -> 42
+	42 -> 51
+	42 -> 43
+	43 -> 44
+	44 -> 45
+	45 -> 46
+	46 -> 47
+	47 -> 48
+	48 -> 49
+	49 -> 50
+	50 -> 51
+	51 -> 52
+	52 -> 53
+	53 -> 54
+	54 -> 55
+	55 -> 56
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	59 -> 68
+	59 -> 60
+	60 -> 61
+	61 -> 62
+	62 -> 63
+	63 -> 64
+	64 -> 65
+	65 -> 66
+	66 -> 67
+	67 -> 68
+	68 -> 77
+	68 -> 69
+	69 -> 70
+	70 -> 71
+	71 -> 72
+	72 -> 73
+	73 -> 74
+	74 -> 75
+	75 -> 76
+	76 -> 77
+	77 -> 86
+	77 -> 78
+	78 -> 79
+	79 -> 80
+	80 -> 81
+	81 -> 82
+	82 -> 83
+	83 -> 84
+	84 -> 85
+	85 -> 86
+	86 -> 87
+	87 -> 88
+	88 -> 89
+	89 -> 90
+	90 -> 91
+	91 -> 92
+	92 -> 93
+	93 -> 94
+	94 -> 103
+	94 -> 95
+	95 -> 96
+	96 -> 97
+	97 -> 98
+	98 -> 99
+	99 -> 100
+	100 -> 101
+	101 -> 102
+	102 -> 103
+	103 -> 112
+	103 -> 104
+	104 -> 105
+	105 -> 106
+	106 -> 107
+	107 -> 108
+	108 -> 109
+	109 -> 110
+	110 -> 111
+	111 -> 112
+	112 -> 113
+	113 -> 114
+	114 -> 115
+	115 -> 116
+	116 -> 117
+	117 -> 118
+	118 -> 119
+	119 -> 120
+	120 -> 129
+	120 -> 121
+	121 -> 122
+	122 -> 123
+	123 -> 124
+	124 -> 125
+	125 -> 126
+	126 -> 127
+	127 -> 128
+	128 -> 129
+	129 -> 138
+	129 -> 130
+	130 -> 131
+	131 -> 132
+	132 -> 133
+	133 -> 134
+	134 -> 135
+	135 -> 136
+	136 -> 137
+	137 -> 138
+	138 -> 139
+	139 -> 140
+	140 -> 141
+	141 -> 142
+	142 -> 143
+	143 -> 144
+	144 -> 145
+	145 -> 146
+	146 -> 147
+	147 -> 148
+	148 -> 149
+	149 -> 150
+	150 -> 151
+	151 -> 152
+	152 -> 153
+	153 -> 154
+}

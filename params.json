@@ -1,0 +1,7 @@
+{
+    "row_PE": 32,
+    "col_PE": 32,
+    "n_SA": 64,
+    "no_modules_act": 64,
+    "no_modules_pool": 64
+}

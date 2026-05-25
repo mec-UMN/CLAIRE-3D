@@ -1,0 +1,38 @@
++-------------------+-------------------+-------------+
+|    Edge Node 1    |    Edge Node 2    | Total Edges |
++-------------------+-------------------+-------------+
+|       LINEAR      |        GELU       |    159618   |
+|       LINEAR      |       LINEAR      |   1076361   |
+|        TANH       |       LINEAR      |     513     |
+|       LINEAR      |        SILU       |    760448   |
+|        RELU       |       LINEAR      |     8940    |
+|       LINEAR      |      ROIALIGN     |      8      |
+|       LINEAR      |      PERMUTE      |    60366    |
+|       CONV1D      |       CONV1D      |   12850600  |
+|       CONV1D      |       LINEAR      |  102760448  |
+|       CONV1D      |        GELU       |     1848    |
+|       CONV2D      |       CONV2D      |  288371612  |
+|        RELU       |       CONV2D      |   52247150  |
+| ADAPTIVEAVGPOOL2D |       CONV2D      |     8768    |
+|     AVGPOOL2D     |       CONV2D      |    240846   |
+|       LINEAR      |       CONV2D      |     314     |
+|  LASTLEVELMAXPOOL |       CONV2D      |   5138024   |
+|      ROIALIGN     |       CONV2D      |      10     |
+|       RELU6       |       CONV2D      |   5539458   |
+|      PERMUTE      |       CONV2D      |    60212    |
+|        RELU       |     MAXPOOL2D     |   4009822   |
+|        RELU       |  CONVTRANSPOSE2D  |     3921    |
+|        RELU       |        RELU       |     4236    |
+|        RELU       | ADAPTIVEAVGPOOL2D |    443598   |
+|     MAXPOOL2D     |       CONV2D      |    781343   |
+| ADAPTIVEAVGPOOL2D |     MAXPOOL2D     |     6862    |
+| ADAPTIVEAVGPOOL2D |       LINEAR      |     6965    |
+| ADAPTIVEAVGPOOL2D |      FLATTEN      |     154     |
+|        RELU       |     AVGPOOL2D     |    60213    |
+|      ROIALIGN     |      FLATTEN      |     118     |
+|        RELU       |      ROIALIGN     |     1412    |
+|      ROIALIGN     |      ROIALIGN     |     708     |
+|       LINEAR      |      FLATTEN      |     272     |
+|       LINEAR      |       RELU6       |    12544    |
+| ADAPTIVEAVGPOOL2D |      PERMUTE      |     154     |
++-------------------+-------------------+-------------+
